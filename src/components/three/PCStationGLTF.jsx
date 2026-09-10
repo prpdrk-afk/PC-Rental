@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { useGLTF, Html } from '@react-three/drei'
 import * as THREE from 'three'
 import ModelWrapper from './ModelWrapper'
+import assetUrl from '../../utils/assetUrl'
 
 /**
  * PCStationGLTF — Loads realistic 3D gaming station GLB model
@@ -218,6 +219,6 @@ export default function PCStationGLTF({
 }
 
 // Preload models for instantaneous rendering
-useGLTF.preload('/models/basic_station.glb')
-useGLTF.preload('/models/pro_station.glb')
-useGLTF.preload('/models/ultra_station.glb')
+useGLTF.preload(assetUrl('models/basic_station.glb'))
+useGLTF.preload(assetUrl('models/pro_station.glb'))
+useGLTF.preload(assetUrl('models/ultra_station.glb'))

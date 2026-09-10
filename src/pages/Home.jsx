@@ -8,6 +8,7 @@ import HowItWorks from '../components/HowItWorks'
 import PCDetailModal from '../components/PCDetailModal'
 import { packages } from '../data/packages'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import assetUrl from '../utils/assetUrl'
 
 /* ─── Animation variants ─── */
 const fadeUp = {
@@ -345,7 +346,7 @@ const placeholderSections = [
   {
     id: 'ai-image',
     content: 'สร้างภาพประชาสัมพันธ์ PC RENTAL ซึ่งเป็นบริการเช่าคอมพิวเตอร์ออนไลน์สำหรับ Gamer นักเรียน นักศึกษา และ Content Creator ใช้สไตล์ Modern Technology และ Cyberpunk โทนสีดำและน้ำเงิน มี Gaming PC ประสิทธิภาพสูงและองค์ประกอบเกี่ยวกับ Cloud Computing ภาพดูทันสมัย Premium และน่าเชื่อถือ เหมาะสำหรับใช้เป็น Banner เว็บไซต์',
-    image: '/images/ai-image-showcase.png',
+    image: assetUrl('images/ai-image-showcase.png'),
     label: 'AI IMAGE',
     icon: '🤖',
     color: '#00f5ff',
@@ -354,7 +355,7 @@ const placeholderSections = [
   {
     id: 'desmos',
     content: 'แบบจำลองรายได้: Basic ราคา 15 บาทต่อชั่วโมง, Pro ราคา 25 บาทต่อชั่วโมง และ Ultra ราคา 40 บาทต่อชั่วโมง สร้างสมการสำหรับแต่ละ Package และใช้จำนวนชั่วโมงตั้งแต่ 0–24 ชั่วโมงเพื่อเปรียบเทียบรายได้',
-    image: '/images/desmos-revenue.png',
+    image: assetUrl('images/desmos-revenue.png'),
     label: 'DESMOS',
     icon: '📈',
     color: '#7b2ff7',
@@ -363,7 +364,7 @@ const placeholderSections = [
   {
     id: 'mermaid-ai',
     content: 'สร้าง Flowchart แสดงขั้นตอนการเช่าคอมออนไลน์ผ่านเว็บไซต์ โดยให้บริการผ่าน Remote Desktop เช่น AnyDesk, Parsec, Moonlight, Chrome Remote Desktop และ TeamViewer: เลือก Package → เลือกเวลา → ชำระเงิน → ตรวจสอบการชำระเงิน → จัดสรรเครื่อง → Remote เข้าเครื่อง → หมดเวลา → ปิด Session',
-    image: '/images/mermaid-flowchart.png',
+    image: assetUrl('images/mermaid-flowchart.png'),
     label: 'MERMAID AI',
     icon: '🧩',
     color: '#00f5ff',
@@ -381,7 +382,7 @@ const placeholderSections = [
   {
     id: 'notebook-lm',
     content: 'จากข้อมูลของ PC RENTAL ช่วยวิเคราะห์โครงการโดยแบ่งเป็น แนวคิดธุรกิจ กลุ่มลูกค้า บริการและราคา จุดแข็ง จุดอ่อน โอกาส ความเสี่ยง รูปแบบรายได้ และแนวทางพัฒนา โดยใช้ภาษากระชับและเหมาะสำหรับนำไปทำ Presentation และตกแต่งสไลด์อย่างสวยงามตามธีมรูปภาพที่กำหนดให้',
-    image: '/images/notebook-analysis.png',
+    image: assetUrl('images/notebook-analysis.png'),
     label: 'NOTEBOOK LM',
     icon: '📓',
     color: '#7b2ff7',
@@ -439,7 +440,7 @@ function PlaceholderSection({ section }) {
             </article>
             <article className="placeholder-section__card placeholder-section__card--image">
               <h3>ผลลัพธ์</h3>
-              <img className="placeholder-section__image" src="/images/ai-image-showcase.png" alt="ภาพประชาสัมพันธ์ PC RENTAL" />
+              <img className="placeholder-section__image" src={assetUrl('images/ai-image-showcase.png')} alt="ภาพประชาสัมพันธ์ PC RENTAL" />
             </article>
           </div>
           <div className="placeholder-section__badge">

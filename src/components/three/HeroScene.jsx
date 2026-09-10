@@ -3,9 +3,10 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera, useGLTF, useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import ModelWrapper from './ModelWrapper'
+import assetUrl from '../../utils/assetUrl'
 
 function HeroBackdrop() {
-  const texture = useTexture('/images/showroom-cyan-wall.png')
+  const texture = useTexture(assetUrl('images/showroom-cyan-wall.png'))
 
   return (
     <mesh position={[0, 2, -7.2]}>
@@ -16,7 +17,7 @@ function HeroBackdrop() {
 }
 
 function HeroComputer() {
-  const { scene } = useGLTF('/models/environment/server-rack.glb')
+  const { scene } = useGLTF(assetUrl('models/environment/server-rack.glb'))
   const groupRef = useRef()
   const dragRef = useRef({ active: false, x: 0, rotation: 0 })
 

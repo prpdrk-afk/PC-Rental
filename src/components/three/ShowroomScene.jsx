@@ -6,6 +6,7 @@ import PCStationGLTF from './PCStationGLTF'
 import CinematicCameraRig from './CinematicCameraRig'
 import ParticleField from './ParticleField'
 import { packages } from '../../data/packages'
+import assetUrl from '../../utils/assetUrl'
 
 /**
  * ShowroomEnvironment — Realistic modern showroom interior with reflective floor, acoustic walls & server racks
@@ -106,7 +107,7 @@ function ShowroomEnvironment() {
 
 /** A full-bleed visual backdrop, kept behind the real GLB stations. */
 function GamingRoomBackdrop() {
-  const texture = useTexture('/images/showroom-cyan-wall.png')
+  const texture = useTexture(assetUrl('images/showroom-cyan-wall.png'))
 
   return (
     <mesh position={[0, 3.1, -2.32]}>
@@ -123,9 +124,9 @@ export default function ShowroomScene({ selectedPkg, onSelectPkg }) {
   const [hoveredId, setHoveredId] = useState(null)
 
   const stationConfigs = [
-    { pkg: packages[0], model: '/models/basic_station.glb', pos: [-2.6, 0, 0] },
-    { pkg: packages[1], model: '/models/pro_station.glb', pos: [0, 0, 0] },
-    { pkg: packages[2], model: '/models/ultra_station.glb', pos: [2.6, 0, 0] },
+    { pkg: packages[0], model: assetUrl('models/basic_station.glb'), pos: [-2.6, 0, 0] },
+    { pkg: packages[1], model: assetUrl('models/pro_station.glb'), pos: [0, 0, 0] },
+    { pkg: packages[2], model: assetUrl('models/ultra_station.glb'), pos: [2.6, 0, 0] },
   ]
 
   return (
