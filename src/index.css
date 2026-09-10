@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXUS PC RENTAL — Global Styles
+   Dark cyberpunk / tech aesthetic
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ─── CSS Variables ─── */
+:root {
+  /* Colors */
+  --color-bg:          #050510;
+  --color-bg-2:        #070720;
+  --color-surface:     #0d0d2b;
+  --color-surface-2:   #111135;
+  --color-border:      rgba(0, 245, 255, 0.12);
+  --color-border-2:    rgba(123, 47, 247, 0.18);
+
+  --color-cyan:        #00f5ff;
+  --color-purple:      #7b2ff7;
+  --color-orange:      #ff6b35;
+  --color-white:       #f0f4ff;
+  --color-muted:       #6b7aab;
+  --color-muted-2:     #8892b0;
+
+  /* Gradients */
+  --grad-primary:  linear-gradient(135deg, #00f5ff 0%, #7b2ff7 100%);
+  --grad-hero:     linear-gradient(180deg, transparent 0%, #050510 100%);
+  --grad-surface:  linear-gradient(135deg, #0d0d2b 0%, #111135 100%);
+  --grad-glow-c:   radial-gradient(ellipse at center, rgba(0,245,255,0.15) 0%, transparent 70%);
+  --grad-glow-p:   radial-gradient(ellipse at center, rgba(123,47,247,0.15) 0%, transparent 70%);
+
+  /* Typography */
+  --font-display:  'Orbitron', 'Rajdhani', sans-serif;
+  --font-body:     'Inter', 'Rajdhani', system-ui, sans-serif;
+  --font-ui:       'Rajdhani', 'Inter', sans-serif;
+
+  /* Spacing */
+  --nav-height:    72px;
+  --section-py:    clamp(60px, 10vw, 120px);
+  --container-w:   1200px;
+
+  /* Effects */
+  --transition:    0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm:     6px;
+  --radius-md:     12px;
+  --radius-lg:     20px;
+  --radius-xl:     32px;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-purple);
+  border-radius: 3px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img, svg { display: block; max-width: 100%; }
+
+ul { list-style: none; }
+
+/* ─── Utility ─── */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn--lg {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+}
+
+.btn--primary {
+  background: var(--grad-primary);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.25), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 0 35px rgba(0, 245, 255, 0.45), 0 6px 24px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-cyan);
+  border: 1.5px solid var(--color-cyan);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.1);
+}
+
+.btn--ghost:hover {
+  background: rgba(0, 245, 255, 0.08);
+  box-shadow: 0 0 24px rgba(0, 245, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn--card {
+  width: 100%;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--card-color, var(--color-cyan));
+  color: var(--card-color, var(--color-cyan));
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn--card:hover {
+  background: var(--card-color, var(--color-cyan));
+  color: #000;
+}
+
+/* ─── Section common ─── */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  color: var(--color-cyan);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-muted-2);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* ─── App Shell ─── */
+.app { min-height: 100vh; }
