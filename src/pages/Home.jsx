@@ -390,6 +390,7 @@ const placeholderSections = [
   },
   {
     id: 'presentation',
+    link: 'https://canva.link/fbi10jrmxvuhxoj',
     label: 'PRESENTATION',
     icon: '🎯',
     color: '#ff6b35',
@@ -417,7 +418,12 @@ function PlaceholderSection({ section }) {
           <div className="placeholder-section__accent" />
           <div className="placeholder-section__icon">{section.icon}</div>
           <h2 className="placeholder-section__title">{section.label}</h2>
-          <div className="placeholder-section__cards">
+          {section.id === 'presentation' && (
+            <a className="presentation-link-button" href={section.link} target="_blank" rel="noreferrer">
+              <span>🎯</span> เปิดงาน Presentation ใน Canva <span>↗</span>
+            </a>
+          )}
+          <div className={`placeholder-section__cards ${section.id === 'presentation' ? 'placeholder-section__cards--presentation-hidden' : ''}`}>
             <article className="placeholder-section__card">
               <h3>CONTENT</h3>
               <p>{section.content || 'พื้นที่สำหรับใส่รายละเอียดของหัวข้อนี้'}</p>

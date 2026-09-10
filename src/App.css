@@ -929,6 +929,33 @@
   display: none;
 }
 
+.placeholder-section__cards--presentation-hidden {
+  display: none;
+}
+
+.presentation-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px auto 10px;
+  padding: 16px 28px;
+  border: 1px solid rgba(255, 107, 53, 0.75);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff6b35, #7b2ff7);
+  color: #fff;
+  box-shadow: 0 0 26px rgba(255, 107, 53, 0.3);
+  font-family: var(--font-ui);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.presentation-link-button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 38px rgba(255, 107, 53, 0.52);
+}
+
 .placeholder-section__link-button {
   display: inline-flex;
   padding: 12px 18px;
